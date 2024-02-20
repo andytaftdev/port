@@ -1,0 +1,72 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    font-family: 'Lato', sans-serif;
+    color: black;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items:end;
+
+}
+.hero{
+    width: 95vw;
+    height: 95vh;
+    border-top: #c9c8c8 2px solid;
+    
+
+}
+.t-con{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.t-con h3{
+    font-weight: 200;
+}
+.first{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.second{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: end;
+}
+.third{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: end;
+}
+.sub-con{
+    width: 100%;
+    height: 75vh;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+
+    
+
+}
+.slide-video{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    
+}
+
+
+

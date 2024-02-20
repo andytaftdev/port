@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+    <title>Taft</title>
+    <style>
+        @keyframes aos {
+            0%{
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            
+            100%{
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+        @keyframes border {
+            from{
+                transform: rotate(0deg);
+                
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .first.in{
+          animation: aos 1.6s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+          animation-fill-mode:backwards;
+          animation-delay: 0.3s;
+        }
+        .second.in{
+          animation: aos 1.6s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+          animation-delay: 0.6s;
+          animation-fill-mode:backwards;
+
+
+        }
+        .third.in{
+          animation: aos 1.6s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+          animation-delay: 1s;
+          animation-fill-mode:backwards;
+
+
+        }
+        .sub-con.in{
+          animation: aos 1.6s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+          animation-fill-mode:backwards;
+          animation-delay: 1.5s;
+
+        }
+
+        
+        .about{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .con{
+            width: 90%;
+            height: 80%;
+            display: flex;
+            flex-direction: row;
+        }
+        .inside-1{
+            width: 40%;
+
+        }
+        .inside-1.in{
+            animation: aos 1s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+          animation-delay: 0.3s;
+          animation-fill-mode:backwards;
+
+        }
+         .inside-1 .first{
+            width: 60%;
+            font-size: 5vw;
+            font-weight: 700;
+        }
+        .inside-1 .first-desc{
+            width: 80%;
+            font-size: 2vw;
+            margin-top: 8%;
+            font-weight: 700;
+
+        }
+        .inside-2{
+            width:60%;
+            display: flex;
+            justify-content: end;
+            flex-direction: column; gap: 8%;
+
+        }
+        .inside-2.in{
+            animation: aos 1s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+          animation-delay: 0.7s;
+          animation-fill-mode:backwards;
+        }
+        .inside-2 .second{
+            width: 90%;
+            font-size: 1.5vw;
+            font-weight: 700;
+            
+
+            
+            
+        }
+        .inside-2 .second-desc{
+            width: 90%;
+            font-size: 1.1vw;
+            font-weight: 400;
+            
+            
+        }
+        .inside-2 .button{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 4%;
+            margin-bottom: 14%;
+        }
+        .button-skill{
+          border: 2px #22313F solid;
+          width: fit-content;
+          padding: 1.7%;
+          border-radius: 30px;
+        }
+
+        /* saving  */
+
+        .saving{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: #4F7BFF;
+            color: white;
+        }
+        .heads{
+            width: 95%;
+            height: fit-content;
+            display: flex;
+            border-bottom: #f2f7fd 1px solid;
+            font-size: 10px;
+            justify-content: space-between;
+            margin-top: 2%; color: #f2f7fd;
+        }
+        .con-2{
+            width: 80%;
+            height: 90%;
+            display: flex;
+            flex-direction: row;
+        }
+        .inside-3{
+            width:35%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column; gap: 2%;
+            color: #f2f7fd;
+
+        }
+        .inside-3 .second{
+            width: 100%;
+            font-size: 4vw;
+            font-weight: 400;
+            justify-content: start;
+            
+
+            
+            
+        }
+        .inside-3 .second-desc{
+            width: 100%;
+            font-size: 1.1vw;
+            font-weight: 300;
+            text-align: justify;
+            
+            
+        }
+        .inside-3 .button{
+            margin-top: 10%;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 3%;
+            margin-bottom: 14%;
+        }
+        .inside-3 .button-skill {
+          border: 2px #f2f7fd solid;
+          width: fit-content;
+          padding: 3%;
+          border-radius: 30px;
+        }
+    
+        .bold{
+            font-weight: 700;
+        }
+        .regular{
+            font-weight: 400;
+        }
+        .inside-4{
+            width: 65%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inside-4 img{
+            width: 55%;
+        }
+        .inside-5{
+            width: 80vw;
+            height: 80vh;
+        }
+        
+        /*project*/
+        .project{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+
+        }
+        .project-text{
+            width: 90%;
+            height: fit-content;
+            font-size: 2.5rem;
+
+            
+        }
+        .project-text.in{
+            animation: aos 1s cubic-bezier(0.165, 0.84, 0.44, 1) ;
+          animation-delay: 0.3s;
+          animation-fill-mode:backwards;
+        }
+        .project-list{
+            width: 100%;
+            
+
+        }
+        .project-scroll{
+            position: relative;
+            display: flex;
+            width: 100%;
+            gap: 5vw;
+            overflow-x: auto;
+            
+            scroll-snap-type: x var(--tw-scroll-snap-strictness);
+        }
+        .project-card{
+            scroll-snap-align: center;
+            flex-shrink: 0;
+           
+            transition: all cubic-bezier(0.4,0,0.2,1) 150ms;
+            padding: 2rem;
+
+        }
+
+       
+        .project-img{place-items: center;
+            overflow: hidden;
+            position: relative;
+            width: 350px;
+            height: 700px;
+            border-radius: 30px;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            color: rgb(40, 40, 40);
+            background-image: url(/savings-app-flyer.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            transition: all cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.3s;
+        }
+        .project-img::before{
+            position: absolute;
+            opacity: 0;
+            content: '';
+            width: 20%;
+            height: 150%;
+            background: #22313F;
+            transform: rotate(45deg);
+            border-radius: 30px;
+
+        }
+        .project-img:hover::before{
+            animation: border 20s linear infinite;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            opacity: 1;
+            border-radius: 30px;
+
+
+        }
+        .project-img:hover{
+            scale: 1.03;
+
+        }
+        .project-img::after{
+            position: absolute;
+            content: '';
+            inset: 4px;
+            background-image: url(/savings-app-flyer.svg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 30px;
+
+
+        }
+        .project-title{
+            font-size: 22px;
+            font-weight: 400;
+        }
+        
+        .project-desc{
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .project-button{
+            display: flex;
+            justify-content: end;
+        }
+        .project-button button{
+            width: 50px;
+            height: 50px;
+            border-radius: 50px;
+            background-color: #22313F;
+            border: none;
+        }
+        .project-button button img{
+            width: 40%;
+        }
+        
+    </style>
+</head>
+<body 
+>
+<!-- oncontextmenu="return false" this code for disable right click -->
+
+    <div class="container">
+        <div class="hero">
+            <div class="t-con">
+                <div class="first">
+                    <h3>Made by Taft</h3>
+                    <h3>Andy Taft</h3>
+                </div>
+                <div class="second"><h3>February 2008</h3></div>
+                <div class="third"><h3>Website Developer</h3></div>
+            </div>
+            <div class="sub-con">
+                <h1>ANDY TAFT'S <br> PERSONAL <br>WEBSITE</h1>
+            </div>
+        </div>
+    </div>
+    <div class="about">
+        <div class="con">
+            <div class="inside-1">
+                <div class="first">about andy taft</div>
+                
+                <div class="first-desc">andy taft is an it enthusiast that interested in many it thing and ideas, trying to learn more so i can do more.</div>
+            </div>
+            <div class="inside-2">
+                <div class="second">My goal was to make myself better by studying hard skills and soft skills and creating many software ideas that in the future will be usefull to the others</div>
+                <div class="second-desc">I've make many software ideas that appeal to the goal of that ideas and many self project that i'm doing to study more.
+                </div>
+                <div class="button">
+                    <div class="button-skill">Fullstack</div>
+                    <div class="button-skill">Brand maker</div>
+                    <div class="button-skill">UI/UX design</div>
+                    <div class="button-skill">Critical think</div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="project">
+    <div class="project-text">
+        <h1>My Projects</h1>
+    </div>
+    <div class="project-list">
+<div class="project-scroll">
+    <div class="space"></div>
+    <a href="/saving.html" style="text-decoration: none;">
+        <div class="project-card">
+            <div class="project-img">
+                <div class="text-project">
+                    <h1 class="project-title">Savings App</h1>
+                <h1 class="project-desc"> Save your money, Control your money
+                </h1>
+                </div>
+                <div class="project-button">
+                    <button><img src="/dollar-white.svg" alt=""></button>
+        
+                </div>
+            </div>
+        </div></a>
+
+
+</div>
+    </div>
+</div>
+
+
+    <!-- <a href="/saving.html" style="text-decoration: none;">
+        <div class="saving" >
+            <div class="heads">
+                <h1 class="bold">savings</h1>
+                <h1 class="regular">Financial app</h1>
+                <h1 class="regular">2023</h1>
+            </div>
+            <div class="con-2">
+                <div class="inside-3">
+                    <div class="second">Savings App</div>
+                    <div class="second-desc"> a comprehensive financial management application designed to empower users with a clear and detailed overview of their income and expenses. 
+                    </div>
+                    <div class="button">
+                        <div class="button-skill">Fullstack</div>
+                        <div class="button-skill">Brand maker</div>
+                        
+                    </div>
+                </div>
+                <div class="inside-4">
+                    <img src="/savings-iphone.svg" alt="">
+                </div>
+            </div>
+        </div>
+       
+    </a> -->
+    
+    
+</body>
+<script>
+    const made = document.querySelector(".first")
+    const second = document.querySelector(".second")
+    const third = document.querySelector(".third")
+    const sub = document.querySelector(".sub-con")
+    const inside1 = document.querySelector(".inside-1")
+    const inside2 = document.querySelector(".inside-2")
+    const pt = document.querySelector(".project-text")
+    
+      window.addEventListener("DOMContentLoaded", () => {
+        made.classList.toggle("in")
+        second.classList.toggle("in")
+        third.classList.toggle("in")
+        sub.classList.toggle("in")
+
+        
+      });
+      var one = document.querySelector(".about").clientHeight
+      console.log(one)
+      window.addEventListener("scroll", () => {
+        console.log(window.scrollY)
+        if(window.scrollY > 100) {
+        inside1.classList.add("in");
+        inside2.classList.add("in");
+
+
+      }
+      if(window.scrollY > one){
+       pt.classList.add("in");
+      }
+      });
+      
+      
+
+
+
+</script>
+</html>
