@@ -21,20 +21,21 @@
             scroll-behavior: cubic-bezier(.51, -0.01, 1, .43);
 
         }
-      
-        .containerr{
-            
+
+        .containerr {
+
             overflow-y: auto;
         }
-        .containerr.bodys{
+
+        .containerr.bodys {
             width: 100vw;
             height: 100vh;
             overflow-y: hidden;
         }
-        
 
 
-        
+
+
 
         .dot {
             width: 15px;
@@ -81,7 +82,8 @@
             scale: 500;
 
         }
-        .dotss{
+
+        .dotss {
             width: 15px;
             height: 15px;
             border-radius: 100%;
@@ -92,6 +94,7 @@
             top: -100vh;
             scale: 1;
         }
+
         .app-banner:hover .dotss {
             width: 15px;
             height: 15px;
@@ -1282,7 +1285,7 @@
     </style>
 </head>
 
-<body oncontextmenu="return false"  >
+<body oncontextmenu="return false">
     <div class="containerr">
         <div class="dot"></div>
         <div class="splash">
@@ -1311,7 +1314,7 @@
                     <div class="button">
                         <div class="button-skill">Fullstack</div>
                         <div class="button-skill">Brand maker</div>
-    
+
                     </div>
                 </div>
                 <div class="inside-4">
@@ -1319,11 +1322,11 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="about">
             <div class="about-left">
                 <h1 class="regular">About</h1>
-    
+
             </div>
             <div class="about-right">
                 <div class="right-project">
@@ -1336,7 +1339,8 @@
                 <div class="right-info">
                     <h1 class="regular big">Effortlessly manage income and expenses while receiving expert money-saving
                         tips.</h1>
-                    <h1 class="regular big">Empower your financial journey with intuitive tools and educational videos.</h1>
+                    <h1 class="regular big">Empower your financial journey with intuitive tools and educational videos.
+                    </h1>
                 </div>
                 <div class="right-logo">
                     <div class="container-logo">
@@ -1348,21 +1352,21 @@
                             <h1 class="passive p ">Android UI/UX Design</h1>
                             <h1 class="passive p ">Pemuda bagus</h1>
                         </div>
-    
+
                     </div>
                 </div>
             </div>
         </div>
-    
-    
+
+
         <div class="screen">
             <div class="container-img">
                 <div class="dots"></div>
-    
+
                 <img src="/img.sabings.svg" alt="">
-    
+
             </div>
-    
+
         </div>
         <div class="one">
             <div class="title-01">
@@ -1374,7 +1378,7 @@
                             An S-shaped vector elegantly splits, symbolizing income and expenses. Its dynamic design
                             embodies empowerment and financial transformation, reflecting the app's commitment to users'
                             financial well-being.</h1>
-    
+
                 </div>
                 <div class="number-dec">
                     <div class="button-skills normal light">logo's</div>
@@ -1411,20 +1415,21 @@
                 </div>
             </div>
         </div>
-    
+
         <div class="two">
             <div class="title-02">
                 <div class="number-desc-02">
-                    <h1 class=" normal light"> Effortlessly manage income and expenses while receiving expert money-saving
+                    <h1 class=" normal light"> Effortlessly manage income and expenses while receiving expert
+                        money-saving
                         tips. Empower your financial journey with intuitive tools, educational videos, and personalized
                         insights. Take control of your finances today.</h1>
-    
+
                 </div>
                 <div class="number-dec-02">
                     <div class="button-skills normal light">Application</div>
                 </div>
-    
-    
+
+
                 <div class="number-02">
                     <h1 class="numbers-big regular">02</h1>
                 </div>
@@ -1464,11 +1469,11 @@
             </div>
             <div class="dt-3">
                 <h1 class="numbers-last">Merci!</h1>
-    
+
             </div>
             <div class="dt-4">
                 <h1 class="numbers-last">Gracias!</h1>
-    
+
             </div>
             <div class="dt-5">
                 <h1 class="numbers-last">
@@ -1499,7 +1504,7 @@
                     <h2>Goodbye!</h2>
                 </div>
             </div>
-    
+
         </div>
     </div>
 
@@ -1539,15 +1544,26 @@
     const iLogo = document.querySelector(".images-logo")
     const twoBanner = document.querySelector(".app-banner")
     const dot = document.querySelector(".dot")
-    // Disable inspect element
-$(document).bind("contextmenu",function(e) {
-  e.preventDefault();
-});
-$(document).keydown(function(e){
-  if(e.which === 123){
-    return false;
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
+    document.onkeydown = function(e) {
+if(event.keyCode == 123) {
+return false;
 }
-});
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) {
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'C'.charCodeAt(0)) {
+return false;
+}
+if(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) {
+return false;
+}
+if(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0)) {
+return false;
+}
+}
 
     document.addEventListener("mousemove", (e) => {
         let x = e.pageX - 10;
@@ -1663,7 +1679,7 @@ $(document).keydown(function(e){
                 var oneimgh = document.querySelector('.container-images').clientHeight;
                 var twoh = document.querySelector('.two').clientHeight;
 
-                
+
                 function myFunction(x) {
                     if (x.matches) { // If media query matches
                         var vh = document.querySelector('body').clientHeight
@@ -1730,7 +1746,7 @@ $(document).keydown(function(e){
                     console.log('yes')
                 }
                 if (window.scrollY > (abouth + screenh + savingh + oneh + oneimgh + twoh -
-                    spl)) {
+                        spl)) {
                     twoBanner.style.transform =
                         `translateY(${window.scrollY - (abouth + screenh +savingh + oneh + oneimgh +twoh- spl ) + "px"})`
                 }
