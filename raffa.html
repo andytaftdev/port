@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: "Plus Jakarta Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        @keyframes blurd{
+            0%{
+                filter: blur(2px);
+            }
+            50%{
+                filter: blur(0px);
+            }
+            100%{
+                filter: blur(2px);
+            }
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .container {
+            background-color: #FDFDFD;
+        }
+
+        nav {
+            width: 100vw;
+            height: 10vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .con-nav {
+            width: 15%;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        nav h1 {
+            font-weight: 400;
+            color: #292929;
+        }
+
+        nav a {
+            text-decoration: none;
+
+        }
+
+        /* hero page */
+
+        .hero {
+            width: 100vw;
+            padding-bottom: 2%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .card-prof {
+            width: 70%;
+            height: fit-content;
+            padding: 5%;
+            background-color: #292929;
+            color: #F1F1F1;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        .card-prof h1 {
+            font-size: 96px;
+            font-weight: 600;
+        }
+        .name-title{
+            transform: translateY(125%);
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+            position: relative;
+            z-index: 1;
+        }
+        .name-title.load{
+            transform: translateY(0%);
+        }
+        #mtcre{
+            
+            z-index: 2;
+        }
+        #mtcna{
+            z-index: 1;
+        }
+        #ccna{
+            z-index: 3;
+        }
+
+        .desc-con {
+            width: 100%;
+            margin-top: 2%;
+            position: relative;
+            z-index: 2;
+            background-color: #292929;
+        }
+        .text-wrap{
+            width: 60%;
+        }
+
+        .desc-con h5 {
+            font-size: 32px;
+            font-weight: 400;
+            opacity: 75%;
+
+        }
+        .name-desc{
+            transform: translateY(180%);
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+            position: relative;
+            z-index: 1;
+        }
+        .name-desc.load{
+            transform: translateY(0%);
+        }
+
+        .skill-title {
+            margin-top: 6%;
+            width: 80%;
+            height: fit-content;
+            background-color: #EDEDED;
+            border-radius: 20px;
+            transform: translateY(480%);
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .skill-title h1 {
+            padding: 20px;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .skills {
+            width: 100vw;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+           
+            
+
+        }
+        .skill-title.load{
+            transform: translateY(0%);
+        }
+
+        .skills hr {
+            width: 100%;
+            border-top: 1px solid #292929;
+            margin-bottom: 24px;
+        }
+
+        .skill {
+            display: flex;
+            flex-direction: column;
+            width: 80%;
+            margin-top: 5%;
+            background-color: #FDFDFD;
+
+        }
+        .skill.translate{
+            transform: translateY(180%);
+
+        }
+        .skill.load{
+            transform: translateY(0%);
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        
+
+        .left-skill {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+
+        }
+
+        .left-skill h1 {
+            font-size: 72px;
+            color: #292929;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+
+        }
+        .left-skill img{
+            width: 96px;
+        }
+
+        .left-skill h1:hover {
+            opacity: 0.7;
+
+        }
+
+        .right-skill {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+        }
+
+        .right-con {
+            width: 50%;
+            row-gap: 24%;
+
+
+        }
+
+        .right-con h2 {
+            font-size: 40px;
+            color: #292929;
+            font-weight: 400;
+            margin-top: 20px;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+
+
+        }
+
+        .right-con h2:hover {
+            opacity: 0.7;
+
+        }
+
+        .right-con hr {
+            width: 100%;
+            margin-top: 20px;
+
+        }
+
+        .certificates {
+            width: 100vw;
+            padding-top: 5%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            background-color: #FDFDFD;
+        }
+        #certi{
+            z-index: 7;
+        }
+
+        .certificates-title {
+            width: 80%;
+            height: fit-content;
+            background-color: #EDEDED;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .certificates-title h1 {
+
+            padding: 20px;
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .hover-card {
+            margin-top: 5%;
+            width: 80%;
+            height: 40vh;
+            background-color: #F8F8F8;
+            border-radius: 20px;
+            padding: 24px;
+            position: relative;
+            overflow-y: hidden;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .hover-card:hover {
+            filter: brightness(70%);
+            cursor: pointer;
+        }
+
+        .hover-card:hover .image {
+            scale: 0.8;
+        }
+
+        .hover-card:hover .image-cisco {
+            scale: 0.8;
+        }
+
+        .hover-card:hover .image-desc {
+            bottom: 5%;
+        }
+
+        .image {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/MikroTik_Logo_%282022%29.svg/2560px-MikroTik_Logo_%282022%29.svg.png');
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .image-cisco {
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Cisco_logo_blue_2016.svg/2560px-Cisco_logo_blue_2016.svg.png');
+            width: 100%;
+            height: 100%;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .image-desc {
+            position: absolute;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+
+            bottom: -10%;
+        }
+
+        .books {
+            width: 100vw;
+            padding-top: 5%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background-color: #FDFDFD;
+            
+        }
+        
+
+        .grid {
+            width: 80%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            gap: 24px;
+
+        }
+
+        .hover-books {
+            margin-top: 5%;
+            width: 90%;
+            height: 60vh;
+            background-color: #F8F8F8;
+            border-radius: 20px;
+            padding: 24px;
+            overflow-y: hidden;
+            transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hover-mtcre {
+            z-index: -10;
+            opacity: 0;
+            background-color: #2795DB;
+            width: 120px;
+            height: 120px;
+
+            border-radius: 70%;
+            position: absolute;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            color: #fdfdfd;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+
+
+        }
+
+        .hover-books:hover .hover-mtcre {
+            z-index: 10;
+            opacity: 1;
+            background-color: #2795DB;
+            animation: blurd 3s infinite;
+
+            
+            border-radius: 100%;
+
+            align-items: center;
+
+            position: absolute;
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+            content: '';
+
+
+
+
+        }
+        .hover-mtcre{
+            filter: blur(0.8px);
+        }
+
+
+        .book-mtcre {
+            background-image: url(/mtcre-before.png);
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            scale: 0.7;
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+
+        }
+
+        .hover-books:hover .book-mtcre {
+            scale: 0.8;
+        }
+
+        .book-mtcna {
+            background-image: url(/mtcna-before.png);
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            scale: 0.7;
+            transition: all 1s cubic-bezier(0.19, 1, 0.22, 1);
+
+        }
+
+        .hover-mtcna {
+            z-index: -10;
+            opacity: 0;
+            background-color: #C7B7A3;
+            width: 120px;
+            height: 120px;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            border-radius: 70%;
+            position: absolute;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            color: #fdfdfd;
+
+        }
+
+        .hover-books:hover .hover-mtcna {
+            z-index: 10;
+            opacity: 1;
+            animation: blurd 3s infinite;
+            background-color: #C7B7A3;
+            border-radius: 100%;
+            position: absolute;
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            content: '';
+
+
+
+        }
+        .hover-mtcna{
+            filter: blur(0.8px);
+        }
+
+        .hover-books:hover .book-mtcna {
+            scale: 0.8;
+        }
+
+        .hover-books:hover {
+            cursor: pointer;
+        }
+        @media screen and (max-width: 1240px) {
+            .card-prof h1{
+                font-size: 48px;
+            }
+            .con-nav{
+                width: 50%;
+            }
+            .text-wrap{
+                width: 100%;
+            }
+            .desc-con h5 {
+            font-size: 16px;
+           
+
+        }
+            .right-con h2{
+                font-size: 20px;
+            }
+            .grid{
+                grid-template-columns: 100%;
+            }
+            .left-skill h1{
+                font-size: 48px;
+            }
+            .left-skill img{
+            width: 56px;
+        }
+
+        @media screen and ( max-width: 780px) {
+            .card-prof h1{
+                font-size: 36px;
+            }
+            .con-nav{
+                width: 75%;
+            }
+        }
+        
+
+
+        }
+       
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <div class="con-nav">
+                <a href="index.html">
+                    <h1>Home</h1>
+                </a>
+                <a href="aboutme.html">
+                    <h1>About me</h1>
+                </a>
+            </div>
+
+        </nav>
+        <div class="hero">
+            <div class="card-prof">
+                <h1 class="name-title">I’m Raffa Al Fawwaz👋🏻</h1>
+                <div class="desc-con">
+                    <div class="text-wrap">
+                        <h5 class="name-desc">Network engineer maintains, troubleshoots network infrastructure, ensuring reliable
+                            connectivity, system performance, and security.</h5>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="skill-title">
+                <h1>My skills</h1>
+            </div>
+        </div>
+        <div class="skills">
+            <div class="skill" id="mtcna">
+                <hr>
+    
+                    <div class="left-skill">
+                        <h1>MTCNA</h1>
+                        <img src="/icon-mtcna.svg" alt="">
+    
+                    </div>
+                    <div class="right-skill">
+    
+                        <div class="right-con">
+                            <h2>RouterOS Configuration</h2>
+                            <hr>
+                            <h2>Wireless Networking</h2>
+                            <hr>
+                            <h2>Network Services</h2>
+                        </div>
+    
+                    </div>
+                </div>
+            <div class="skill" id="mtcre">
+            <hr >
+
+                <div class="left-skill">
+                    <h1>MTCRE</h1>
+                    <img src="/icon-mtcre.svg" alt="">
+                </div>
+                <div class="right-skill">
+
+                    <div class="right-con">
+                        <h2>Routing Protocols</h2>
+                        <hr>
+                        <h2>Advanced Routing</h2>
+                        <hr>
+                        <h2>Trouble Shooting</h2>
+                    </div>
+
+                </div>
+            </div>
+            
+            <div class="skill" id="ccna">
+            <hr>
+
+                <div class="left-skill">
+                    <h1>CCNA</h1>
+                    <img src="/icon-ccna.svg" alt="">
+
+                </div>
+                <div class="right-skill">
+
+                    <div class="right-con">
+                        <h2>Network Fundamentals</h2>
+                        <hr>
+                        <h2>Routing and Switching</h2>
+                        <hr>
+                        <h2>Network Security</h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="certificates" id="certi">
+            <div class="certificates-title">
+                <h1>Certificates🎲</h1>
+            </div>
+
+            <div class="hover-card">
+                <div class="image"></div>
+                <div class="image-desc">
+                    <h1>MTCNA Certificates</h1>
+                </div>
+            </div>
+            <div class="hover-card">
+                <div class="image"></div>
+                <div class="image-desc">
+                    <h1>MTCRE Certificates</h1>
+                </div>
+            </div>
+            <div class="hover-card">
+                <div class="image-cisco"></div>
+                <div class="image-desc">
+                    <h1>CCNA Certificates</h1>
+                </div>
+            </div>
+        </div>
+        <div class="books" id="books">
+            <div class="certificates-title">
+                <h1>Books💼</h1>
+            </div>
+            <div class="grid">
+                <div class="hover-books">
+                    <div class="book-mtcna"></div>
+                    <a href="aboutme.html">
+                        <div class="hover-mtcna">See more!</div>
+                    </a>
+
+
+                </div>
+                <div class="hover-books">
+                    <div class="book-mtcre"></div>
+                    <a href="aboutme.html">
+                        <div class="hover-mtcre">See more!</div>
+                    </a>
+
+
+                </div>
+               
+                <div class="hover-books">
+                    <div class="book-ccna"></div>
+                    <div class="book-ccna-a"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+<script>
+
+window.addEventListener("DOMContentLoaded", () => {
+    const name = document.querySelector('.name-title')
+    const nameDesc = document.querySelector('.name-desc')
+    const skills = document.querySelector('.skill-title')
+    const skill = document.querySelector('.skill')
+    skill.classList.toggle("translate");
+
+    setTimeout(() => {
+        name.classList.toggle("load");
+    },500)
+    setTimeout(() => {
+  nameDesc.classList.toggle("load");
+  skills.classList.toggle("load");
+  skill.classList.toggle("load");
+
+    },650)
+    setTimeout(() => {
+  skill.classList.remove("load");
+  skill.classList.remove("translate");
+
+
+    },1650)
+
+    
+});
+
+    document.addEventListener("mousemove", (e) => {
+        let x = e.pageX + -50;
+        let y = e.pageY + -50;
+
+
+        const hovercre = document.querySelector(".hover-books:hover .hover-mtcre");
+        const hovercna = document.querySelector(".hover-books:hover .hover-mtcna");
+
+
+        hovercre.style.top = y + "px";
+        hovercre.style.left = x + "px";
+
+    });
+    document.addEventListener("mousemove", (e) => {
+        let x = e.pageX + -50;
+        let y = e.pageY + -50;
+
+
+        const hovercna = document.querySelector(".hover-books:hover .hover-mtcna");
+
+
+        hovercna.style.top = y + "px";
+        hovercna.style.left = x + "px";
+
+    });
+
+    window.addEventListener("scroll", () => {
+        const mtcre = document.querySelector('#mtcre');
+        const mtcna = document.querySelector('#mtcna');
+        const ccna = document.querySelector('#ccna');
+        var nav = document.querySelector('nav').clientHeight;
+        var hero = document.querySelector('.hero').clientHeight;
+        var mtcres = document.querySelector('#mtcre').clientHeight;
+        var mtcnas = document.querySelector('#mtcna').clientHeight;
+        if (window.scrollY > (nav + hero)) {
+            mtcna.style.transform =
+                        `translateY(${window.scrollY - (nav+hero) + "px"})`
+                }
+                if (window.scrollY > (nav + hero + mtcres -( mtcres /7))) {
+            mtcre.style.transform =
+                        `translateY(${window.scrollY - (nav+hero+mtcres -( mtcres /7)) + "px"})`
+                }
+                if (window.scrollY > (nav + hero + mtcres+mtcnas -( mtcres /7 + mtcnas/7))) {
+            ccna.style.transform =
+                        `translateY(${window.scrollY - (nav+hero+mtcres+mtcnas-( mtcres /7 +mtcnas/7)) + "px"})`
+                }
+                if (window.scrollY > (nav + hero + mtcres+mtcnas+mtcres+mtcnas)) {
+            ccna.style.transform =
+                        `translateY(0px)`
+                        mtcre.style.transform =
+                        `translateY(0px)`
+                        mtcna.style.transform =
+                        `translateY(0px)`
+                }
+
+    });
+</script>
+
+</html>
