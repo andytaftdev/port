@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+        font-family: ppregular;
+        src: url('/Metropolis-Regular.otf');
+    }
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "ppregular", sans-serif;
+
+        }
+
+
+        body {
+            height: 100vh;
+            width: 100vw;
+            background-color: #EDE5DF;
+            margin: 0;
+            overflow: hidden;
+
+        }
+
+        #image-track {
+            display: flex;
+            gap: 4vmin;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(0%, -50%);
+            user-select: none;
+        }
+
+        #image-track>.image {
+            width: 40vmin;
+            height: 56vmin;
+            object-fit: cover;
+            object-position: 100% center;
+            
+
+        }
+      
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            justify-content: center;
+            grid-template-columns: 33% 33% 33%;
+            overflow: hidden;
+            background-color: #EDE5DF;
+            position: relative;
+            left: 0;
+            transform: scale(1);
+
+
+        }
+
+        .container.open {
+            transform: scale(3);
+            transition: all 4.5s cubic-bezier(1, .02, .19, .99);
+
+        }
+
+        .container.del {
+            opacity: 0;
+            transition: all 2s cubic-bezier(1, .02, .19, .99);
+
+        }
+
+        .container.del.delete {
+            display: none;
+
+        }
+
+        .side {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+        }
+
+        .main {
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gambar {
+            width: 90%;
+            margin: 20px;
+            height: 300px;
+            border-radius: 12px;
+            transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+            transform:translateY(350%);
+        }
+
+        .gambar.open {
+            transform: translate(0%, -30%);
+        }
+
+        .gambar2 {
+            width: 90%;
+            margin: 20px;
+            height: 300px;
+            border-radius: 12px;
+            transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+            transform:translateY(350%);
+
+        }
+
+        .gambar2.open {
+            transform: translate(0%, -30%);
+        }
+
+        .middle {
+            width: 90%;
+            height: 30vh;
+            margin: 1.5vh;
+            border-radius: 12px;
+            transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+            transform: translate(0%, -600%);
+
+        }
+
+        .middle.open {
+            transform: translate(0%, 0%);
+
+        }
+
+        .center {
+            width: 90%;
+            height: 30vh;
+            margin: 1.5vh;
+            border-radius: 12px;
+            transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+            transform: translate(0%, -600%);
+            background-color: #9C7B65;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fcfbfb;
+
+        }
+
+        .center.open {
+            transform: translate(0%, 0%);
+        }
+
+        .works {
+            position: absolute;
+            opacity: 0;
+            transform: translate(100%, 0%);
+            transition: all 2s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+        }
+
+        .works.show {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+            transform: translate(0%, 0%);
+
+
+        }
+        .project-con{
+            width: 800px;
+            height: 900px;
+            background-color: #C39A7E;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .inside-con{
+            width: 90%;
+            height: 90%;
+            border-radius: 16px;
+        }
+        .inside-con .image{
+          width: 100%;
+          height: 95%;
+          border-radius: 16px;
+          object-fit: cover;
+            object-position: 100% center;
+        }
+        .text-con{
+            width: 100%;
+            height: 10%;
+            display: flex; 
+            justify-content: space-between;
+            color: #EDE5DF;
+            align-items: center;
+        }
+        .genre {
+        width: fit-content;
+        padding: 8px 20px 8px 20px;
+        background-color: transparent;
+        border: 1px #fcfbfb solid;
+        border-radius: 96px;
+
+    }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="side">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="gambar">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="gambar">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="gambar">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="gambar">
+        </div>
+        <div class="main">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="middle">
+                <div class="center">
+                    <h1>My Archives -></h1>
+                </div>
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="middle">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="middle">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="middle">
+        </div>
+        <div class="side">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="gambar2">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="gambar2">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="gambar2">
+            <img src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                class="gambar2">
+        </div>
+    </div>
+
+    <div class="works">
+        
+
+        <div id="image-track" data-percentage="0">
+            <div class="project-con">
+                <div class="inside-con">
+                    <img class="image"
+                src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+                    <div class="text-con">
+                        <h2>E-commerce</h2>
+                        <div class="genre">Design</div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-con">
+                <div class="inside-con">
+                    <img class="image"
+                src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+                    <div class="text-con">
+                        <h2>E-commerce</h2>
+                        <div class="genre">Design</div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-con">
+                <div class="inside-con">
+                    <img class="image"
+                src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+                    <div class="text-con">
+                        <h2>E-commerce</h2>
+                        <div class="genre">Design</div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-con">
+                <div class="inside-con">
+                    <img class="image"
+                src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+                    <div class="text-con">
+                        <h2>E-commerce</h2>
+                        <div class="genre">Design</div>
+                    </div>
+                </div>
+            </div>
+            <div class="project-con">
+                <div class="inside-con">
+                    <img class="image"
+                src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+                    <div class="text-con">
+                        <h2>E-commerce</h2>
+                        <div class="genre">Design</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- <div id="image-track" data-percentage="0">
+            <img class="image"
+                src="https://images.unsplash.com/photo-1524781289445-ddf8f5695861?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+            <img class="image"
+                src="https://images.unsplash.com/photo-1610194352361-4c81a6a8967e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+                draggable="false" />
+            <img class="image"
+                src="https://images.unsplash.com/photo-1618202133208-2907bebba9e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+            <img class="image"
+                src="https://images.unsplash.com/photo-1495805442109-bf1cf975750b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+            <img class="image"
+                src="https://images.unsplash.com/photo-1548021682-1720ed403a5b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+            <img class="image"
+                src="https://images.unsplash.com/photo-1496753480864-3e588e0269b3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2134&q=80"
+                draggable="false" />
+            <img class="image"
+                src="https://images.unsplash.com/photo-1613346945084-35cccc812dd5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1759&q=80"
+                draggable="false" />
+            <img class="image"
+                src="https://images.unsplash.com/photo-1516681100942-77d8e7f9dd97?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+                draggable="false" />
+        </div> -->
+    </div>
+
+
+    <script>
+        const container = document.querySelector('.container');
+
+const center = document.getElementsByClassName('center');
+const gambar = document.getElementsByClassName('gambar');
+const gambar2 = document.getElementsByClassName('gambar2');
+const works = document.getElementsByClassName('works');
+const middle = document.getElementsByClassName('middle');
+
+function toggleClass(elements, className) {
+    for (let i = 0; i < elements.length; i++) {
+        elements[i].classList.toggle(className);
+    }
+}
+
+const track = document.getElementById("image-track");
+let percentage = 0;
+
+window.addEventListener('wheel', (e) => {
+    percentage += e.deltaX * -0.1;
+    percentage = Math.max(Math.min(percentage, 0), -100);
+    track.style.transform = `translate(${percentage}%, -50%)`;
+    for (const image of track.getElementsByClassName("image")) {
+        image.style.objectPosition = `${100 + percentage}% center`;
+    }
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+    setTimeout(() => {
+        container.classList.toggle("open");
+        toggleClass(gambar, 'open');
+        toggleClass(gambar2, 'open');
+    }, 200);
+
+    setTimeout(() => {
+        toggleClass(middle, 'open');
+        toggleClass(center, 'open');
+    }, 800);
+
+    setTimeout(() => {
+        container.classList.remove("open");
+        container.classList.toggle("del");
+    }, 4600);
+
+    setTimeout(() => {
+        container.classList.toggle("delete");
+        toggleClass(works, 'show');
+    }, 6700);
+});
+    </script>
+</body>
+
+</html>
